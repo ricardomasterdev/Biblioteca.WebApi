@@ -16,8 +16,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\GerenciamentoLivros\Biblioteca.Domain\Biblioteca.Application\Biblioteca.Application.csproj" />
-		<ProjectReference Include="..\..\..\GerenciamentoLivros\Biblioteca.Domain\Biblioteca.Infrastructure\Biblioteca.Infrastructure.csproj" />
+	  <ProjectReference Include="..\Biblioteca.Application\Biblioteca.Application.csproj" />
+	  <ProjectReference Include="..\Biblioteca.Domain\Biblioteca.Domain.csproj" />
+	  <ProjectReference Include="..\Biblioteca.Infrastructure\Biblioteca.Infrastructure.csproj" />
 	</ItemGroup>
 
 </Project>
