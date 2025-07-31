@@ -31,14 +31,48 @@ Libraria é um sistema web completo para gestão de bibliotecas físicas ou digi
 
 ## Stack Tecnológica
 
-| Camada             | Tecnologias                                                                              |
-| ------------------ | ---------------------------------------------------------------------------------------- |
-| **Front‑end**      | HTML5, JavaScript ES6, **Bootstrap 5**, Chart.js                                         |
-| **Back‑end**       | **ASP.NET Core 9 Web API**, C#, Entity Framework Core, AutoMapper, FluentValidation, JWT |
-| **Banco de Dados** | **SQL Server 2022**                                                                      |
-| **DevOps**         | IIS 10, Git, CI/CD (GitHub Actions)                                                      |
+| Camada             | Tecnologias                                                                                                                                                                                                                                                                                                                                                  |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Front‑end**      | HTML5, JavaScript ES6, **Bootstrap 5**, Chart.js                                                                                                                                                                                                                                                                                                             |
+| **Back‑end**       | ASP.NET Core 9 Web API (Microsoft.AspNetCore.App), C#; Entity Framework Core (SqlServer, Tools, Design); AutoMapper.Extensions.Microsoft.DependencyInjection; FluentValidation.AspNetCore; Microsoft.AspNetCore.Authentication.JwtBearer; Swashbuckle.AspNetCore; System.Text.Json; Built-in Dependency Injection; Middleware (Logging & Exception Handling) |
+| **Banco de Dados** | SQL Server 2022                                                                                                                                                                                                                                                                                                                                              |
+| **DevOps**         | IIS 10, Git, CI/CD (GitHub Actions)                                                                                                                                                                                                                                                                                                                          |
 
----
+## Namespaces Utilizados
+
+Na camada Back-end, utilizamos os namespaces padrão do .NET Core 9, importados via `using`:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+```
+
+## Pacotes Adicionados via CLI
+
+Durante a configuração do projeto, utilizamos os seguintes comandos do `dotnet CLI` para adicionar pacotes essenciais:
+
+```bash
+# Entity Framework Core para SQL Server e ferramentas de migração
+dotnet add src/Biblioteca.WebApi/Biblioteca.WebApi.csproj package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add src/Biblioteca.WebApi/Biblioteca.WebApi.csproj package Microsoft.EntityFrameworkCore.Design
+dotnet add src/Biblioteca.WebApi/Biblioteca.WebApi.csproj package Microsoft.EntityFrameworkCore.Tools
+
+# AutoMapper para mapeamento entre DTOs e entidades
+dotnet add src/Biblioteca.WebApi/Biblioteca.WebApi.csproj package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+# FluentValidation para validação de modelos
+dotnet add src/Biblioteca.WebApi/Biblioteca.WebApi.csproj package FluentValidation.AspNetCore
+
+# Suporte a JWT para autenticação
+dotnet add src/Biblioteca.WebApi/Biblioteca.WebApi.csproj package Microsoft.AspNetCore.Authentication.JwtBearer
+
+# Swagger para documentação interativa
+dotnet add src/Biblioteca.WebApi/Biblioteca.WebApi.csproj package Swashbuckle.AspNetCore
+```
 
 ## Estrutura do Repositório
 
